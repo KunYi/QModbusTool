@@ -23,15 +23,15 @@ Optionally, a trend window can be created.  Using the available controls on the 
 Once the communication parameters have been correctly configured and the desired windows have been created, select "Connect" from the "File" menu and the program will connect.  If the device connected to supports "Read Device ID" at address 0, the device name will briefly appear in the status bar section.  Once connected data may be polled either on request or automatically by selecting the appropriate option from the "Poll" menu.  If the meta data plug-in is available, the system may also poll register meta data from the the connected device.  The session may also be saved as can any window data and the trend.
 
 ### Building
-QModbusTool was specifically designed for Linux, it should be reasonably easy to build under both Windows and macOS. However, the plugin interface has not been ported to these platforms. 
+QModbusTool was specifically designed for Linux, it should be reasonably easy to build under both Windows and macOS. However, the plugin interface has not been ported to these platforms.
 QModbusTool is built with qmake and requires a compiler that supports C++17 or newer.  It has been successfully built using both GCC and CLang.
 
 ### Prerequisites
-* Qt 5+
+* Qt 5+ (currently modify for Ubuntu 22.04 with qt5.15.3 verify by KunYi)
 	- += core gui xml widgets printsupport
 * [LibModbus][4] (Modbus back-end)
 * [QtCSV][5] (saving / restoring register and trend data)
-* [QCustomPlot][6] (trending widget)
+* [QCustomPlot][6] (trending widget). the source include v2.1.1 source code
 	- The build process expects this to be available as a library.  It does not ship with the amalgamation.
 	- It is recommended to build with OpenGL support as it will utilize that functionality if available to improve redraw performance.
 
