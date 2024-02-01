@@ -27,7 +27,8 @@ SOURCES += \
     base_dialog.cpp \
     trend_line.cpp \
     configure_trend_line.cpp \
-    configure_trend.cpp
+    configure_trend.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
     coils_display.h \
@@ -46,7 +47,8 @@ HEADERS += \
     base_dialog.h \
     trend_line.h \
     configure_trend_line.h \
-    configure_trend.h
+    configure_trend.h \
+    qcustomplot.h
 
 FORMS += \
     mainwindow.ui \
@@ -57,7 +59,7 @@ TRANSLATIONS += \
     QModbusTool_en_US.ts
 
 LIBS += \
-    -L/usr/local/lib -lmodbus -ldl -lqtcsv -lqcustomplot
+    -L/usr/local/lib -lmodbus -ldl -lqtcsv
 
 INCLUDEPATH += \
     /usr/local/include
