@@ -117,8 +117,8 @@ void CsvImporter::setupUi()
         for (size_t row=0; row<m_test_text[col].size(); ++row) {
             auto item = new QTableWidgetItem(m_test_text[col][row]);
             item->setFlags(Qt::NoItemFlags);
-            item->setBackgroundColor(g_disabled_color);
-            item->setTextColor(QColor(0, 0, 0));
+            item->setBackground(g_disabled_color);
+            item->setForeground(QColor(0, 0, 0));
             m_preview_table->setItem(int(row + 2U), int(col), item);
         }
     }
@@ -153,7 +153,7 @@ void CsvImporter::on_column_checked(const QCheckBox *const checkbox, const size_
 
         }
         auto w = m_preview_table->item(int(i+2U), int(column));
-        w->setBackgroundColor(color);
+        w->setBackground(color);
     }
 }
 
@@ -255,7 +255,7 @@ void CsvImporter::on_header_row_checked(int status)
         }
 
         auto w = m_preview_table->item(2, int(i));
-        w->setBackgroundColor(color);
+        w->setBackground(color);
     }
 }
 
