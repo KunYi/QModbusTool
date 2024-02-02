@@ -387,7 +387,7 @@ void RegisterDisplay::set_metadata(std::shared_ptr<Metadata> metadata, const qui
 {
     if (node == m_node && metadata->register_number >= m_starting_register &&
             metadata->register_number < m_starting_register + m_count) {
-        const size_t index = metadata->register_number - m_starting_register;
+        const unsigned short index = metadata->register_number - m_starting_register;
         m_register_descriptions[index]->setText(metadata->label);
         m_register_encoding[index] = metadata->encoding;
         if (index == (m_count - 1)) {

@@ -164,8 +164,8 @@ private:
 
     std::vector<quint16> m_regs;
     quint16 m_reg_number=0;
-    quint16 m_count=0;
-    quint8 m_node=0;
+    quint16 m_count=6;
+    quint8 m_node=1;
 };
 
 

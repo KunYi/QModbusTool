@@ -150,7 +150,8 @@ void ModbusThread::modbus_request(const quint16 first_reg, const quint16 num_reg
     m_mx.lock();
     m_reg_number = first_reg;
     m_count = num_regs;
-    m_node = uid;
+    if (uid > 0 && uid < 250)
+        m_node = uid;
     m_write_request=false;
     m_raw_request=nullptr;
     m_cond.notify_one();
@@ -186,7 +187,8 @@ void ModbusThread::modbus_request(const quint16 first_reg, std::vector<quint16> 
     m_regs = std::move(regs_to_write);
     m_reg_number = first_reg;
     m_count = quint16(reg_count);
-    m_node = uid;
+    if (uid > 0 && uid < 250)
+        m_node = uid;
     m_write_request=true;
     m_raw_request=nullptr;
     m_cond.notify_one();
@@ -198,7 +200,8 @@ void ModbusThread::modbus_request(const quint8 *pdu, const quint8 length, const 
 {
     m_mx.lock();
     m_regs = {};
-    m_node = uid;
+    if (uid > 0 && uid < 250)
+        m_node = uid;
     m_count = quint16(length);
     m_raw_request = pdu;
     m_write_request=false;
